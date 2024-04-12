@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Головна сторінка Hardware</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alef:700|Alice&display=swap&subset=cyrillic" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+         $(".slider").each(function () { // обробка кожного слайдера
+          var obj = $(this);
+          $(obj).append("<div class='nav'></div>");
+          $(obj).find("li").each(function () {
+           $(obj).find(".nav").append("<span rel='"+$(this).index()+"'></span>"); // додавання блогу навігації
+           $(this).addClass("slider"+$(this).index());
+          });
+          $(obj).find("span").first().addClass("on"); // робимо активним перший елемент меню
+         });
+        });
+        function sliderJS (obj, sl) { // slider function
+         var ul = $(sl).find("ul"); // находимо блок
+         var bl = $(sl).find("li.slider"+obj); // находимо любий із елементів блока
+         var step = $(bl).width(); // ширина об'єкта
+         $(ul).animate({marginLeft: "-"+step*obj}, 500); // 500 це швидкість перемотки
+        }
+        $(document).on("click", ".slider .nav span", function() { // slider click navigate
+         var sl = $(this).closest(".slider"); // находимо, в якому блоку був клік
+         $(sl).find("span").removeClass("on"); // прибираємо активний елемент
+         $(this).addClass("on"); // робимо активним поточний
+         var obj = $(this).attr("rel"); // дізнаємося його номер
+         sliderJS(obj, sl); // слайдим
+         return false;
+        });
+        </script>
+</head>
+<body>
+
+
+
+
+<!-- header -->
+<header class="header">
+  <div class="container">
+    <h1 class="h1-header"><img class="logo" src="./img/logo.png"/>Комп'ютерний сервіс "Hardware"<img class="logo" src="./img/logo2.png"/></h1>
+    <div class="container">
+        <section id="navigation" class="navigation">
+            <div class="container">
+                <nav class="nav">
+                    <a href="index.html" class="gradient-button">На головну</a>
+                    <div class="dropdown">
+                        <a href="services.html" class="dropbtn">Послуги</a>
+                        <div class="dropdown-content">
+                          <a href="services.html">Товари та послуги</a>
+                          <a href="order.html">Зробити замовлення</a>
+                        </div>
+                      </div>
+                    <a href="photo.html" class="gradient-button">Фотогалерея</a>
+                    <a href="reviews.html" class="gradient-button">Відгуки</a>
+                </nav>
+            </div>
+           
+			<div class="hamburger-menu">
+  <input id="menu__toggle" type="checkbox" />
+  <label class="menu__btn" for="menu__toggle">
+    <span></span>
+  </label>
+  
+				<ul class="menu__box">
+    <li><a class="menu__item" href="index.html">На головну</a></li>
+    <li><a class="menu__item" href="services.html">Послуги</a></li>
+    <li><a class="menu__item" href="photo.html">Фотогалерея</a></li>
+    <li><a class="menu__item" href="reviews.html">Відгуки</a></li>
+  </ul>
+</div>
+        
+		</section>
+    </div>
+
+    <div class="headerdesc">Комп’ютерний сервіс “Hardware” - це сервіс по обслуговуванню комп’ютерної техніки. Також ми займаємось створенням комп’ютерних систем та мереж для фірм, компаній та офісів. У сфері наших послуг також ремонт комп’ютерної техніки, мережевого обладнання та периферійних пристроїв.</div>
+    <div class="desc1img">
+        <img src="img/DescImg1.png" alt="DecsOneImg" class="banneranim">
+    </div>
+    <div class="headerdesc">Ми надаємо широкий спектр послуг - від створення індивідуальних ПК для окремого клієнта до оптових замовлень великих компаній.
+        Наші спеціалісти також встановлюють базове програмне забезпечення по бажанню клієнта, наприклад операційну систему, комплект офісних програм, програми для діагностики ПК.</div>
+        <div class="gradient-button-desc2">
+            <a href="#bilshe" class="gradient-button-desc">Дізнатись більше</a>
+        </div>
+  </div>
+</header>
+<main>
+    <div class="bodybackground">
+
+    
+    <!-- main -->
+    <section id="maininfo" class="maininfo">
+      <div class="container">
+
+      <div id="bilshe">
+      <div class="guarantees">
+            <h2>Наш сервіс гарантує</h2>
+    
+            <div class="guarantees_icons">
+              <div>
+                <img class="icon-img" src="./img/computer.png" alt="Зірка" />
+                <p>Обслуговування офісних комп'ютерів</p>
+              </div>
+              <div>
+                <img class="icon-img" src="./img/gamecontroller.png" alt="Зірка" />
+                <p>Обслуговування геймерських комп'ютерів</p>
+              </div>
+              <div>
+                <img class="icon-img" src="./img/tools.png" alt="Зірка" />
+                <p>Широкий спектр послуг, від чистки до збірки ПК з нуля</p>
+              </div>
+              <div>
+                <img class="icon-img" src="./img/check.png" alt="Зірка" />
+                <p>Вчасне виконання роботи</p>
+              </div>
+              <div>
+                <img class="icon-img" src="./img/location.png" alt="Зірка" />
+                <p>Можливість відправки техніки через Нову Пошту</p>
+              </div>
+            </div>
+          </div>
+        </div>
+<div class="clientchoose">
+    <h2>Оберіть що Вас цікавить</h2>
+
+    <div class="clientchooseicons">
+        <div>
+        <a href="services.html#officepc"><img src="./img/computer2.png" alt="Зірка"/></a>
+        <p>Збірка офісного ПК</p>
+      </div>
+      <div>
+        <a href="services.html#gamingpc"><img  src="./img/gamecontroller2.png" alt="Зірка"/></a>
+        <p>Збірка геймерського ПК</p>
+      </div>
+      <div>
+        <a href="services.html#obslyg"><img  src="./img/tools2.png" alt="Зірка"/></a>
+        <p>Обслуговування ПК/ноутбука</p>
+      </div>
+    </div>
+</div>
+</div>  
+<div class="container">
+<div class="workphotodemo">
+    <h2>Наші останні збірки</h2>
+
+    <div class="slider">
+        <ul>
+            <li><img src="img/workphotodemo1.png" alt=""></li>
+            <li><img src="img/workphotodemo2.png"" alt=""></li>
+            <li><img src="img/workphotodemo3.png" alt=""></li>
+            <li><img src="img/workphotodemo4.png" alt=""></li>
+            <li><img src="img/workphotodemo5.png" alt=""></li>
+        </ul>
+    </div>
+
+    <div class="sliderkiller" >
+      <div><img src="img/workphotodemo1.png" alt=""></div>
+      <div><img src="img/workphotodemo2.png" alt=""></div>
+      <div><img src="img/workphotodemo3.png" alt=""></div>
+      <div><img src="img/workphotodemo1.png" alt=""></div>
+    </div>
+  
+    <style type="text/css">
+        .slider {
+        z-index: 9;
+        width: 600px;
+        height: 400px;
+        overflow: hidden;
+        margin: 0 0 7px;
+        position: relative;
+        display: flex;
+        }
+        .slider ul,
+        .slider li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        }
+        .slider ul {
+        width: 9999px; 
+        }
+        .slider ul li {
+        list-style-type: none;
+        float: left;
+        width: 600px;
+        height: 400px;
+        }
+        .slider .nav {
+        position: absolute;
+        left: 15px;
+        bottom: 12px; 
+        }
+        .slider .nav span {
+        opacity: 0.9;
+        background: #fff;
+        margin: 0 8px 0 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        overflow: hidden;
+        display: block;
+        float: left;
+        box-shadow: 0 1px 2px #000;
+        }
+        .slider .nav span.on {
+        background: #2e9419;
+        }
+       </style>
+
+</div>
+
+<div class="gradient-button-desc2">
+  <a href="photo.html" class="gradient-button-desc">Більше фото</a>
+</div>
+</div>
+<div class="container"> 
+<div class="partners">
+
+            <h2>Партнерство</h2>            
+            <div class="Partners-Logo">
+                <div>
+                    <div><img src="img/amdpart.png" alt="" class="banneranim"></div>
+                    <div><img src="img/nvidiapart.png" alt="" class="banneranim"></div>
+                    <div><img src="img/hppart.png" alt="" class="banneranim"></div>
+                </div>
+                <div>
+                    <div><img src="img/microsoftpart.png" alt="" class="banneranim"></div>
+                    <div><img src="img/intelpart.png" alt="" class="banneranim"></div>
+                    <div><img src="img/asuspart.png" alt="" class="banneranim"></div>
+                </div>
+            </div>
+        </div>
+      </div>   
+    </section>
+    <div class="location">
+      <h2>Де ми знаходимось</h2>
+    </div>
+    
+</div>
+
+<div class="map-responsive">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d192.69559133149804!2d24.010122668850098!3d49.824779835590796!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae78648dd47eb%3A0x66795fda6e4320!2sNotebook%20Center!5e0!3m2!1sru!2sua!4v1639306693136!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</main>
+
+<!-- footer -->
+<footer id="footer" class="footer">
+    <div class="container">
+		<div class="contacts">
+			<p>тел.номер: 0962234523</p>
+			<p>email: hardwareservices@gmail.com</p>
+		</div>
+		<div class="social">
+			<p>Ми в соц.мережах:</p>
+			<a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.png" alt=""></a>
+			<a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.png" alt=""></a>
+			<a href="https://www.telegram.com/" target="_blank"><img src="img/telegram.png" alt=""></a>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
